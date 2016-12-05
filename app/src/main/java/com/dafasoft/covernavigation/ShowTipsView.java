@@ -76,7 +76,8 @@ public class ShowTipsView extends View {
      */
 	@Override
 	protected void onDraw(Canvas canvas) {
-		super.onDraw(canvas);if (mBitmap == null) {
+		super.onDraw(canvas);
+		if (mBitmap == null) {
 			mBitmap = Bitmap.createBitmap(canvas.getWidth(), canvas.getHeight(), Bitmap.Config.ARGB_4444);
 			mTempCanvas = new Canvas(mBitmap);
 		}
@@ -85,7 +86,8 @@ public class ShowTipsView extends View {
 		mTempCanvas.drawRect(0, 0, mTempCanvas.getWidth(), mTempCanvas.getHeight(), mPaint);
 		mTransparentPaint.setColor(getResources().getColor(android.R.color.transparent));
 		mTransparentPaint.setXfermode(mPorterDuffXfermode);
-		mTempCanvas.drawRect(mRectStartPoints.x , mRectStartPoints.y , mRectStartPoints.x + rectWidth , mRectStartPoints.y + rectHeight, mTransparentPaint);
+		mTempCanvas.drawRect(mRectStartPoints.x , mRectStartPoints.y , mRectStartPoints.x + rectWidth
+				, mRectStartPoints.y + rectHeight, mTransparentPaint);
 		canvas.drawBitmap(mBitmap , 0 , 0 , mPaint);
 	}
 
